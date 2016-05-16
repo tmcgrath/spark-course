@@ -1,0 +1,1 @@
+~/Development/spark-1.6.1-custom/bin/spark-submit --conf spark.driver.userClassPathFirst=true --class "com.supergloo.SlackStreamingApp" --master spark://todd-mcgraths-macbook-pro.local:7077 ./target/scala-2.11/spark-streaming-example-assembly-1.0.jar local[5] <your-slack-key> output
