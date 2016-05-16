@@ -15,8 +15,8 @@ scalaVersion := "2.11.8"
 resolvers += "jitpack" at "https://jitpack.io"
  
 libraryDependencies ++= Seq(
-  "org.apache.spark" %% "spark-streaming" % "1.6.1" % "provided",
-//  "org.apache.spark" %% "spark-streaming" % "1.6.1",
+//  "org.apache.spark" %% "spark-streaming" % "1.6.1" % "provided",
+  "org.apache.spark" %% "spark-streaming" % "1.6.1",
   "org.scalaj" %% "scalaj-http" % "2.3.0",
   "org.jfarcand" % "wcs" % "1.5" 
 )
