@@ -2,7 +2,6 @@ package com.supergloo
  
 import java.net.URI
 
-// import com.supergloo.WebSocketClient.Messages.TextMessage 
 import org.apache.spark.Logging
 import org.apache.spark.storage.StorageLevel
 import org.apache.spark.streaming.receiver.Receiver
@@ -49,16 +48,4 @@ class SlackReceiver(token: String) extends Receiver[String](StorageLevel.MEMORY_
     JSON.parseFull(response).get.asInstanceOf[Map[String, Any]].get("url").get.toString
   }
  
-  //  private def receive(): Unit = {
-  //   val webSocket = WebSocketClient(new URI(webSocketUrl())){
-  //     case TextMessage(client, message) => {
-  //       store(message)
-  //     }
-  //   }
-  // }
-
-  // private def webSocketUrl(): String = {
-  //   val response = Http(slackUrl).param("token", token).asString.body
-  //   JSON.parseFull(response).get.asInstanceOf[Map[String, Any]].get("url").get.toString
-  // }
 }
