@@ -3,6 +3,7 @@
 Demonstrates running a Spark SQL app for Spark Training Course
 
 To run JDBC example:
+
 1. sbt assembly
 2. Make sure your cluster is running and issue something similar to following:
 
