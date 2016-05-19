@@ -20,7 +20,6 @@ object SlackStreamingTask {
       .filter(JSON.parseFull(_).get.asInstanceOf[Map[String, String]]("type") == "message") // get only message events
       .map(JSON.parseFull(_).get.asInstanceOf[Map[String, String]]("text")) // extract message text from the event
 
-    stream.print()
     val kmeanStream = kMean(stream, clusters) // create K-mean model
     kmeanStream.print() // print k-mean results. It is pairs (k, m), where k - is a message text, m - is a cluster number to which message relates
     

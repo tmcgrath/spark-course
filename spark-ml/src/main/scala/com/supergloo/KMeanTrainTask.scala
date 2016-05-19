@@ -8,6 +8,7 @@ import org.apache.spark.mllib.clustering.{KMeans, KMeansModel}
 import org.apache.spark.mllib.feature.HashingTF
 import org.apache.spark.mllib.feature.IDF
 import org.apache.spark.mllib.linalg.Vectors
+
 /**
   * Apache Spark with Scala course
   */
@@ -20,8 +21,6 @@ object KMeanTrainTask {
     if (new File(modelLocation).exists) removePrevious(modelLocation)
 
     val trainRdd = sparkContext.textFile(trainData)
-    
-    val numIterations = 20
 
     val parsedData = trainRdd.map(Utils.featurize).cache()
     
