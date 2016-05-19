@@ -22,8 +22,9 @@ object KMeanTrainTask {
 
     val trainRdd = sparkContext.textFile(trainData)
 
-    val parsedData = trainRdd.map(Utils.featurize).cache()
-    
+    val parsedData = trainRdd.map(Utils.featurize).cache()  
+    // if we had a really large data set to train on, we'd want to call an action to trigger cache.
+        
     val model = KMeans.train(parsedData, numClusters, numIterations)
 
     sparkContext.makeRDD(model.clusterCenters, numClusters).saveAsObjectFile(modelLocation)
@@ -35,6 +36,9 @@ object KMeanTrainTask {
     model
   }
 
+  /**
+  * Remove previous model
+  */
   def removePrevious(path: String) = {
     def getRecursively(f: File): Seq[File] = 
       f.listFiles.filter(_.isDirectory).flatMap(getRecursively) ++ f.listFiles
