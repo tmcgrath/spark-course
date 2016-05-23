@@ -1,7 +1,6 @@
 # Apache Spark with Scala training course - Machine Learning (MLlib) example
 
-
-TODO- change program name, add resources for more language
+[Apache Spark with Scala training course](https://www.udemy.com/learning-spark/ "Apache Spark with Scala training")
 
 ## What it does?
 It performs k-means clustering on text messages streamed from Slack.  It may use an existing k-means model or new training data may be created and used to train.
